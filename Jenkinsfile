@@ -9,10 +9,11 @@ pipeline {
          agent {
            docker {
                image 'mcr.microsoft.com/dotnet/sdk:6.0'
+               args '-u root'
            }
          }
          steps {
-            sh 'dotnet publish -c release -o /app --no-restore'
+            sh 'dotnet publish -c release -o /core --no-restore'
          }
       }
   }
