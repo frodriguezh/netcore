@@ -13,7 +13,7 @@ pipeline {
            }
          }
          steps {
-            sh 'dotnet publish -c release -o /core --no-restore'
+            sh 'dotnet publish -c release -o $WORKSPACE/app --no-restore'
          }
       }
   }
