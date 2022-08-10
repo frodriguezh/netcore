@@ -5,7 +5,7 @@ pipeline {
     ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory-access-token')
   }
   stages{
-       stage('Build') {
+      stage('Build') {
          agent {
            docker {
                image 'mcr.microsoft.com/dotnet/sdk:6.0'
@@ -14,6 +14,11 @@ pipeline {
          steps {
               echo 'final'
          }
+      }
+      stage ('Removing files') {
+        steps {
+            sh 'rm -rf $WORKSPACE/*'
+        }
       }
   }
 }
