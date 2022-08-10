@@ -1,5 +1,5 @@
 // Define variable
-def ARTIFACTORY_FOLDER = "result"
+def myVariable = "result/"
 pipeline {
   agent any 
   environment {
@@ -20,7 +20,7 @@ pipeline {
         stage('Upload to Artifactory') {
           steps {
             //Subir un archivo especifico
-            sh 'jf rt u --url http://192.168.0.12:8081/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} Artifact_$BUILD_NUMBER ${ARTIFACTORY_FOLDER}/'
+            sh 'jf rt u --url http://192.168.0.12:8081/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} Artifact_$BUILD_NUMBER ${myVariable}'
             //Subir directorio
             //sh 'jf rt u --url http://192.168.0.12:8081/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} $WORKSPACE/Artifact_$BUILD_NUMBER ${ARTIFACTORY_FOLDER}/'
           }
