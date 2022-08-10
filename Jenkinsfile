@@ -7,13 +7,10 @@ pipeline {
   stages{
        stage('Build') {
          agent {
-           docker {
-               image 'mcr.microsoft.com/dotnet/sdk:6.0'
-               args '-u root'
-           }
+           dockerfile true
          }
          steps {
-            sh 'dotnet publish -c release -o $WORKSPACE/app --no-restore'
+            echo 'fin'
          }
       }
   }
