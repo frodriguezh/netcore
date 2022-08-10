@@ -7,13 +7,7 @@ pipeline {
   stages{
    stage('Build') {
      steps {
-       script {
-        dir("test")
-          {
-           sh  'touch $WORKSPACE/Artifact_$BUILD_NUMBER'
-          }
-          }
-        }
+       
     }
     stage('Upload to Artifactory') {
       steps {
