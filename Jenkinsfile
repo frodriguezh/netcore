@@ -12,7 +12,7 @@ pipeline {
            }
          }
          steps {
-            echo 'hello word'
+            sh 'dotnet publish -c release -o /app --no-restore'
          }
       }
   }
