@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Upload to Artifactory') {
             steps {
-                sh 'jf rt u --url http://192.168.0.12:8081/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} $WORKSPACE/app result/'
+                sh 'jf rt u --url http://192.168.0.12:8081/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} core.sln result/'
             }
         }
     }
