@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh "cp /app ${WORKSPACE}"
+                sh "cp -R /app ${WORKSPACE}"
             }
         }
     }
