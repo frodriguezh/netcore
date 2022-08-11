@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
     environment {
         CI = true
         ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory-access-token')
@@ -16,7 +16,6 @@ pipeline {
                 sh  'touch $WORKSPACE/Artifact_$BUILD_NUMBER'
                 sh 'jf rt u --url http://192.168.0.12:8081/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} Artifact_$BUILD_NUMBER result/'
             }
-
         }
     }
 }
