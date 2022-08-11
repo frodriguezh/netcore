@@ -5,8 +5,11 @@ pipeline {
         ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory-access-token')
     }
     stages {
-        agent { dockerfile true }
         stage('Build') {
+            agent {
+                dockerfile {
+                filename 'Dockerfile'
+            }
             steps {
                 sh "cp -R /app ${WORKSPACE}"
             }
