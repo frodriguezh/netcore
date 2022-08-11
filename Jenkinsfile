@@ -17,7 +17,7 @@ pipeline {
             agent any
             steps {
                 sh  'touch $WORKSPACE/Artifact_$BUILD_NUMBER'
-                sh 'jf rt u --url http://192.168.0.12:8081/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} Artifact_$BUILD_NUMBER result/'
+                sh 'jf rt u --url http://192.168.0.12:8081/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} app/ result/'
             }
         } 
     }
