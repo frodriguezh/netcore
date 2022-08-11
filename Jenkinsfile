@@ -22,7 +22,8 @@ pipeline {
         stage ('Removing files') {
             agent any
             steps {
-                sh 'rm -rf $WORKSPACE/*'
+                echo 'fin'
+                //sh 'rm -rf $WORKSPACE/*'
             }
         }
     }
