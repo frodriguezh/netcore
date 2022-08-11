@@ -12,12 +12,15 @@ pipeline {
          }
        }
        steps {
-            echo 'final'
+            sh 'date > /tmp/test.txt'
+            sh "cp /tmp/test.txt ${WORKSPACE}"
+            archiveArtifacts 'test.txt'
+            
        }
     }
     stage ('Removing files') {
         steps {
-            sh 'rm -rf $WORKSPACE/*'
+            //sh 'rm -rf $WORKSPACE/*'
         }
     }
   }
