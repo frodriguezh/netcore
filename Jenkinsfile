@@ -16,7 +16,7 @@ pipeline {
         stage('Upload to Artifactory') { 
             agent any
             steps {
-                sh 'jf rt u --url http://192.168.0.12:8081/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} app_$BUILD_NUMBER/ result/'
+                sh 'jf rt u --url http://localhost:8082/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} app_$BUILD_NUMBER/ result/'
             }
         }
         stage ('Removing files') {
