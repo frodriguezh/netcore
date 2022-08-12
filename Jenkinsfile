@@ -16,6 +16,7 @@ pipeline {
         stage('Upload to Artifactory') { 
             agent any
             steps {
+                sh 'jf rt ping'
                 sh 'jf rt u --url http://192.168.0.10:8082/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} app_$BUILD_NUMBER/ result/'
             }
         }
