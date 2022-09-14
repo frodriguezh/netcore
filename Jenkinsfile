@@ -17,7 +17,8 @@ pipeline {
             agent any
             steps {
                 sh 'jf rt ping'
-                sh 'jf rt u --url http://192.168.0.10:8081/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} app_$BUILD_NUMBER/ result/'
+                //sh 'jf rt u --url http://192.168.0.10:8081/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} app_$BUILD_NUMBER/ result/'
+                sh 'jf rt u --url https://45ac-2800-150-137-798-9ebc-54e7-dce5-6060.sa.ngrok.io/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} app_$BUILD_NUMBER/ result/'
             }
         }
         stage ('Removing files') {
