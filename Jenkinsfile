@@ -18,7 +18,7 @@ pipeline {
             steps {
                 //sh 'jf rt ping'
                 //sh 'jf rt u --url http://192.168.0.10:8081/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} app_$BUILD_NUMBER/ result/'
-                sh 'jfrog rt upload --url http://192.168.0.10:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} core.sln result/
+                sh 'jfrog rt upload --url http://192.168.0.10:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} core.sln result/'
             }
         }
         stage ('Removing files') {
