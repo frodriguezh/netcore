@@ -18,7 +18,7 @@ pipeline {
             steps {
                 //sh 'jf rt ping'
                 //sh 'jf rt u --url http://192.168.0.10:8081/artifactory --access-token ${ARTIFACTORY_ACCESS_TOKEN} app_$BUILD_NUMBER/ result/'
-                sh 'jf rt u app_$BUILD_NUMBER/ result/'
+                sh 'jf rt u app_15/ example-repo-local/'
             }
         }
         stage ('Removing files') {
